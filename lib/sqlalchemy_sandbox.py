@@ -13,6 +13,12 @@ class Student(Base):
     status = Column(String())
     age= Column(Integer())
 
+class Admin(Base):
+    __tablename__ = "admins"
+    id = Column(Integer(), primary_key=True)
+    name = Column(String())
+    status = Column(String())
+
 if __name__ == '__main__':
     engine = create_engine('sqlite:///students.db')
     Base.metadata.create_all(engine)
